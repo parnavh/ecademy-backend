@@ -16,7 +16,6 @@ dir_items.forEach((item) => {
             const function_loaded = Object.getOwnPropertyDescriptor(content, func).value
             let val = file.substring(0, file.length - 3)
             if (val == 'index') val = ''
-            console.log(`router.${func}('/${val}', function_loaded)`);
             eval(`router.${func}('/${item}/${val}', function_loaded)`)
         })
     })
